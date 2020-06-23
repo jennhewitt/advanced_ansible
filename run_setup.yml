@@ -1,0 +1,25 @@
+---
+- hosts: all
+  gather_facts: false # remove later! speeds up testing
+  become: true
+  roles:
+    - common_tasks
+
+- hosts: frontends
+  gather_facts: false # remove later! speeds up testing
+  become: true
+  roles:
+    - setup_haproxy
+
+- hosts: apps
+  gather_facts: false
+  become: true
+  roles:
+    - setup_tomcat
+    - setup_apache
+
+- hosts: appdbs
+  become: true
+  roles:
+    - geerlingguy.postgresql
+
