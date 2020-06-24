@@ -1,2 +1,2 @@
 ---
-haproxy_bind_port: 81
+haproxy_bind_port: 80
