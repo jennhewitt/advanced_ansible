@@ -1,5 +1,4 @@
 ---
-# handlers file for dmccuk-webserver
 - name: restart haproxy
   service:
     name: haproxy
