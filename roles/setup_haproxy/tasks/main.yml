@@ -2,11 +2,8 @@
 
 - name: install HAProxy
   yum:
-    name: "{{ packages }}"
+    name: haproxy
     state: latest
-    vars:
-      packages:
-        - haproxy
 
 - name: enable & start haproxy at boot
   service:
